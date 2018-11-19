@@ -4,10 +4,10 @@ import App from './App';
 import {registerScreen} from './src/screen'
 import {Provider} from 'react-redux';
 import {store} from './src/Store/configureStore'
-
+console.ignoredYellowBox = ['Remote debugger'];
 registerScreen(Provider, store);
 // Navigation.registerComponent(`navigation.playground.WelcomeScreen`, () => App);
-
+let someColor = "#FF9800";
 // AppRegistry.registerComponent('TestingRNNDua', () => App);
 Navigation.events().registerAppLaunchedListener(() => {
     Navigation.setDefaultOptions({
@@ -145,16 +145,20 @@ Navigation.events().registerAppLaunchedListener(() => {
                                                 name: 'home.List',
                                                 options: {
                                                     bottomTab: {
-                                                        text: 'something',
-                                                        icon: require('./src/Assets/menu.png'),
+                                                        text: 'Beranda',
+                                                        icon: require('./src/Assets/Icon/home.png'),
                                                         testID: 'something',
+                                                        color: someColor,
+                                                        selectedIcon: require('./src/Assets/Icon/multi-tab.png')
                                                     },
                                                     topBar: {
                                                         title: {
                                                             text: 'Home'
                                                         }
-                                                    }
+                                                    },
+
                                                 },
+
                                             },
                                         },
 
@@ -169,8 +173,83 @@ Navigation.events().registerAppLaunchedListener(() => {
                                                 name: 'home.List',
                                                 options: {
                                                     bottomTab: {
-                                                        text: 'something',
-                                                        icon: require('./src/Assets/menu.png'),
+                                                        text: 'Timeline',
+                                                        icon: require('./src/Assets/Icon/multi-tab.png'),
+                                                        testID: 'something',
+                                                    },
+                                                    topBar: {
+                                                        title: {
+                                                            text: 'Home'
+                                                        }
+                                                    }
+                                                },
+                                            },
+                                        },
+
+                                    ]
+                                }
+                            },
+
+                            {
+                                stack: {
+                                    children: [
+                                        {
+                                            component: {
+                                                name: 'home.List',
+                                                options: {
+                                                    bottomTab: {
+                                                        text: 'Mall',
+                                                        icon: require('./src/Assets/Icon/hand-bag.png'),
+                                                        testID: 'something',
+                                                    },
+                                                    topBar: {
+                                                        title: {
+                                                            text: 'Home'
+                                                        }
+                                                    }
+                                                },
+                                            },
+                                        },
+
+                                    ]
+                                }
+                            },
+
+                            {
+                                stack: {
+                                    children: [
+                                        {
+                                            component: {
+                                                name: 'home.List',
+                                                options: {
+                                                    bottomTab: {
+                                                        text: 'Notifikasi',
+                                                        icon: require('./src/Assets/Icon/alarm.png'),
+                                                        testID: 'something',
+                                                    },
+                                                    topBar: {
+                                                        title: {
+                                                            text: 'Home'
+                                                        }
+                                                    }
+                                                },
+                                            },
+                                        },
+
+                                    ]
+                                }
+                            },
+
+                            {
+                                stack: {
+                                    children: [
+                                        {
+                                            component: {
+                                                name: 'home.List',
+                                                options: {
+                                                    bottomTab: {
+                                                        text: 'Notifikasi',
+                                                        icon: require('./src/Assets/Icon/user.png'),
                                                         testID: 'something',
                                                     },
                                                     topBar: {
