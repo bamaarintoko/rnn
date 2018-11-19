@@ -4,6 +4,7 @@ import App from './App';
 import {registerScreen} from './src/screen'
 import {Provider} from 'react-redux';
 import {store} from './src/Store/configureStore'
+
 console.ignoredYellowBox = ['Remote debugger'];
 registerScreen(Provider, store);
 // Navigation.registerComponent(`navigation.playground.WelcomeScreen`, () => App);
@@ -13,11 +14,10 @@ Navigation.events().registerAppLaunchedListener(() => {
     Navigation.setDefaultOptions({
         bottomTab: {
             iconColor: '#1B4C77',
-            selectedIconColor: '#0f0',
+            selectedIconColor: someColor,
             textColor: '#1B4C77',
-            selectedTextColor: '#0f0',
-            fontFamily: 'HelveticaNeue-Italic',
-            fontSize: 13
+            selectedTextColor: someColor,
+            fontSize: 13,
         },
         _animations: {
             push: {
@@ -136,6 +136,10 @@ Navigation.events().registerAppLaunchedListener(() => {
                 center: {
 
                     bottomTabs: {
+                        options: {
+                                animate: false,
+
+                        },
                         children: [
                             {
                                 stack: {
@@ -147,15 +151,15 @@ Navigation.events().registerAppLaunchedListener(() => {
                                                     bottomTab: {
                                                         text: 'Beranda',
                                                         icon: require('./src/Assets/Icon/home.png'),
-                                                        testID: 'something',
-                                                        color: someColor,
-                                                        selectedIcon: require('./src/Assets/Icon/multi-tab.png')
+                                                        testID: 'bottomTabTestID',
+
+
                                                     },
                                                     topBar: {
                                                         title: {
                                                             text: 'Home'
                                                         }
-                                                    },
+                                                    }
 
                                                 },
 
@@ -301,7 +305,7 @@ Navigation.events().registerAppLaunchedListener(() => {
                         ]
 
 
-                    },
+                    }
                     // stack: {
                     //     id: 'stackRoot',
                     //     children: [

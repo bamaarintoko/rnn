@@ -23,7 +23,7 @@ class ScreenHome extends PureComponent {
                         icon: require('../../Assets/menu.png')
                     }
                 ],
-            }
+            },
         };
     }
 
