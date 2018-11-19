@@ -2,6 +2,7 @@ import React, {PureComponent} from 'react';
 import {View, Text} from "react-native"
 import {Navigation} from 'react-native-navigation'
 import PropTypes from 'prop-types'
+import {connect} from "react-redux";
 
 // import {connect} from 'react-redux';
 
@@ -79,16 +80,23 @@ class ScreenHome extends PureComponent {
                         text: 'Some props that we are passing'
                     },
                     options: {
-                                topBar: {
-                                    title: {
-                                        text: 'ADD'
-                                    }
-                                }
+                        topBar: {
+                            title: {
+                                text: 'ADD'
+                            }
+                        },
+                        bottomTabs:{
+                            visible:false
+                        }
 
                     }
                 }
             }
         )
+    }
+
+    componentDidMount() {
+        console.log("===>", this.props.redData)
     }
 
     render() {
@@ -100,4 +108,10 @@ class ScreenHome extends PureComponent {
     }
 }
 
-export default (ScreenHome);
+function mapStateToProps(state) {
+    return {
+        redData: state.redData,
+    };
+}
+
+export default connect(mapStateToProps)(ScreenHome);

@@ -2,9 +2,11 @@ import {AppRegistry} from 'react-native';
 import {Navigation} from "react-native-navigation";
 import App from './App';
 import {registerScreen} from './src/screen'
+import {Provider} from 'react-redux';
+import {store} from './src/Store/configureStore'
 
-registerScreen();
-Navigation.registerComponent(`navigation.playground.WelcomeScreen`, () => App);
+registerScreen(Provider, store);
+// Navigation.registerComponent(`navigation.playground.WelcomeScreen`, () => App);
 
 // AppRegistry.registerComponent('TestingRNNDua', () => App);
 Navigation.events().registerAppLaunchedListener(() => {
@@ -132,25 +134,116 @@ Navigation.events().registerAppLaunchedListener(() => {
 
                 },
                 center: {
-                    stack: {
-                        id: 'stackRoot',
+
+                    bottomTabs: {
                         children: [
                             {
-                                component: {
-                                    name: 'home.List',
-                                    options: {
-                                        topBar: {
-                                            title: {
-                                                text: 'Home'
-                                            }
-                                        }
-                                    }
+                                stack: {
+                                    children: [
+                                        {
+                                            component: {
+                                                name: 'home.List',
+                                                options: {
+                                                    bottomTab: {
+                                                        text: 'something',
+                                                        icon: require('./src/Assets/menu.png'),
+                                                        testID: 'something',
+                                                    },
+                                                    topBar: {
+                                                        title: {
+                                                            text: 'Home'
+                                                        }
+                                                    }
+                                                },
+                                            },
+                                        },
+
+                                    ]
+                                }
+                            },
+                            {
+                                stack: {
+                                    children: [
+                                        {
+                                            component: {
+                                                name: 'home.List',
+                                                options: {
+                                                    bottomTab: {
+                                                        text: 'something',
+                                                        icon: require('./src/Assets/menu.png'),
+                                                        testID: 'something',
+                                                    },
+                                                    topBar: {
+                                                        title: {
+                                                            text: 'Home'
+                                                        }
+                                                    }
+                                                },
+                                            },
+                                        },
+
+                                    ]
                                 }
                             }
+                            // {
+                            //     component: {
+                            //         name: 'home.List',
+                            //         options: {
+                            //             bottomTab: {
+                            //                 text: 'something',
+                            //                 icon: require('./src/Assets/menu.png'),
+                            //                 testID: 'something',
+                            //             },
+                            //             topBar: {
+                            //                 title: {
+                            //                     text: 'Home'
+                            //                 }
+                            //             }
+                            //         },
+                            //     },
+                            // },
+                            // {
+                            //     component: {
+                            //         name: 'home.add',
+                            //         options: {
+                            //             bottomTab: {
+                            //                 text: 'something',
+                            //                 icon: require('./src/Assets/menu.png'),
+                            //                 testID: 'something',
+                            //             },
+                            //             topBar: {
+                            //                 title: {
+                            //                     text: 'Home'
+                            //                 }
+                            //             }
+                            //         },
+                            //     },
+                            // },
                         ]
-                    }
+
+
+                    },
+                    // stack: {
+                    //     id: 'stackRoot',
+                    //     children: [
+                    //         {
+                    //             component: {
+                    //                 name: 'home.List',
+                    //                 options: {
+                    //                     topBar: {
+                    //                         title: {
+                    //                             text: 'Home'
+                    //                         }
+                    //                     }
+                    //                 }
+                    //             }
+                    //         }
+                    //     ]
+                    // }
                 },
+
             },
+
 
             // component: {
             //     name: "navigation.playground.WelcomeScreen"
