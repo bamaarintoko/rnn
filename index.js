@@ -146,7 +146,7 @@ Navigation.events().registerAppLaunchedListener(() => {
                                     children: [
                                         {
                                             component: {
-                                                name: 'home.List',
+                                                name: 'screen.home',
                                                 options: {
                                                     bottomTab: {
                                                         text: 'Beranda',
@@ -174,7 +174,7 @@ Navigation.events().registerAppLaunchedListener(() => {
                                     children: [
                                         {
                                             component: {
-                                                name: 'home.List',
+                                                name: 'screen.timeline',
                                                 options: {
                                                     bottomTab: {
                                                         text: 'Timeline',
@@ -183,8 +183,14 @@ Navigation.events().registerAppLaunchedListener(() => {
                                                     },
                                                     topBar: {
                                                         title: {
-                                                            text: 'Home'
-                                                        }
+                                                            text: 'Timeline'
+                                                        },
+                                                        leftButtons: [
+                                                            {
+                                                                id: 'buttonTwo',
+                                                                icon: require('./src/Assets/menu.png')
+                                                            }
+                                                        ],
                                                     }
                                                 },
                                             },
@@ -199,7 +205,7 @@ Navigation.events().registerAppLaunchedListener(() => {
                                     children: [
                                         {
                                             component: {
-                                                name: 'home.List',
+                                                name: 'screen.mall',
                                                 options: {
                                                     bottomTab: {
                                                         text: 'Mall',
@@ -208,8 +214,15 @@ Navigation.events().registerAppLaunchedListener(() => {
                                                     },
                                                     topBar: {
                                                         title: {
-                                                            text: 'Home'
-                                                        }
+                                                            text: 'Mall'
+                                                        },
+                                                        leftButtons: [
+                                                            {
+                                                                id: 'buttonTwo',
+                                                                icon: require('./src/Assets/menu.png')
+                                                            }
+                                                        ],
+
                                                     }
                                                 },
                                             },
@@ -224,7 +237,7 @@ Navigation.events().registerAppLaunchedListener(() => {
                                     children: [
                                         {
                                             component: {
-                                                name: 'home.List',
+                                                name: 'screen.notifikasi',
                                                 options: {
                                                     bottomTab: {
                                                         text: 'Notifikasi',
@@ -233,8 +246,14 @@ Navigation.events().registerAppLaunchedListener(() => {
                                                     },
                                                     topBar: {
                                                         title: {
-                                                            text: 'Home'
-                                                        }
+                                                            text: 'Notifikasi'
+                                                        },
+                                                        leftButtons: [
+                                                            {
+                                                                id: 'buttonTwo',
+                                                                icon: require('./src/Assets/menu.png')
+                                                            }
+                                                        ],
                                                     }
                                                 },
                                             },
@@ -249,17 +268,23 @@ Navigation.events().registerAppLaunchedListener(() => {
                                     children: [
                                         {
                                             component: {
-                                                name: 'home.List',
+                                                name: 'screen.saya',
                                                 options: {
                                                     bottomTab: {
-                                                        text: 'Notifikasi',
+                                                        text: 'Saya',
                                                         icon: require('./src/Assets/Icon/user.png'),
                                                         testID: 'something',
                                                     },
                                                     topBar: {
                                                         title: {
-                                                            text: 'Home'
-                                                        }
+                                                            text: 'Saya'
+                                                        },
+                                                        leftButtons: [
+                                                            {
+                                                                id: 'buttonTwo',
+                                                                icon: require('./src/Assets/menu.png')
+                                                            }
+                                                        ],
                                                     }
                                                 },
                                             },
