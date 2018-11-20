@@ -158,7 +158,9 @@ Navigation.events().registerAppLaunchedListener(() => {
                                                     topBar: {
                                                         title: {
                                                             text: 'Home'
-                                                        }
+                                                        },
+                                                        visible: false,
+                                                        height: 0
                                                     }
 
                                                 },
@@ -213,6 +215,7 @@ Navigation.events().registerAppLaunchedListener(() => {
                                                         testID: 'something',
                                                     },
                                                     topBar: {
+
                                                         title: {
                                                             text: 'Mall'
                                                         },
